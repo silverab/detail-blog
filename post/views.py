@@ -4,8 +4,8 @@ from .models import Post
 
 class HomeView(ListView):
 	model = Post
-	template_name = 'home.html'
+	template_name = 'post/home.html'
 
 class PostView(DetailView):
 	model = Post
-	template_name = 'post_detail.html'
+	template_name = 'post/post_detail.html'
