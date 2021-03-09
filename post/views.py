@@ -5,7 +5,8 @@ from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 
 def CategoryView(request, cats):
-	context = {'cats': cats}
+	category_posts = Post.objects.filter(category=cats)
+	context = {'cats': cats.title(), 'category_posts': category_posts }
 	return render(request, 'post/categories.html', context)
 
 class HomeView(ListView):

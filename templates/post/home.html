@@ -8,7 +8,7 @@
 		<li>
 			<a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> - 
 			{{ post.author.first_name }} -
-			{{ post.category }} -
+			<a href="{% url 'category' post.category %}">{{ post.category }}</a> -
 			{{ post.post_date }}
 				{% if user.is_authenticated %}
 					<a href="{% url 'update_post' post.pk %}">Edit</a>
