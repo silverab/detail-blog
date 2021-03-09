@@ -8,12 +8,13 @@
 		<li>
 			<a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> - 
 			{{ post.author.first_name }} -
+			{{ post.category }} -
 			{{ post.post_date }}
 				{% if user.is_authenticated %}
 					<a href="{% url 'update_post' post.pk %}">Edit</a>
 					- <a href="{% url 'delete_post' post.pk %}">Delete</a>
 				{% endif %}
-					{{ post.body|slice:":150" }}</li>
+					{{ post.body|slice:":150"|safe }}</li>
 				{% endfor %}
 	</ul>
 {% endblock content %}
