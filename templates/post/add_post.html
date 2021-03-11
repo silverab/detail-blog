@@ -10,6 +10,10 @@
 				<button class="btn btn-primary">Post</button>
 			</form>
 		</div>
+		<script>
+			var name = "{{ user.id }}";
+			document.getElementById("user").value = name;
+		</script>
 	{% else %}
 		<h3>You are not allowed here!</h3>
 	{% endif %}
