@@ -42,7 +42,11 @@ class PostView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		cat_menu = Category.objects.all()
 		context = super(PostView, self).get_context_data(*args, **kwargs)
+
+		stuff = get_object_or_404(Post, id=self.kwargs['pk'])
+		total_likes = stuff.total_likes()
 		context["cat_menu"] = cat_menu
+		context["total_likes"] = total_likes
 		return context
 
 class AddPostView(CreateView):
