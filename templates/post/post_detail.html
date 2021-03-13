@@ -35,7 +35,7 @@
 				<button type="submit" name="post_id" value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>
 			{% endif %}
 		{% else %}
-		<small> Login to like</small> <br>
+		<small><a href="{% url 'login' %}"> Login</a> to like</small> <br>
 		{% endif %}
 		{{ total_likes }} Likes
 	</form>
