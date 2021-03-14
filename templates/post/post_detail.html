@@ -14,7 +14,7 @@
 			{% if user.id == post.author.id %}
 			<a href="{% url 'update_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small><br>
 			{% endif %}
-	
+		<img src="{{ post.header_image.url }}" height="200" width="400" alt="">
 	<p>{{ post.body|safe }}</p>
 		{% else %}
 		<hr>
