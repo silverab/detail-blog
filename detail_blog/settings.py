@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
+# import django_heroku
+# import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'detail_blog.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 DATABASES = {
     'default': {
@@ -154,5 +154,5 @@ LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'home'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-django_heroku.settings(locals())
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# django_heroku.settings(locals())
