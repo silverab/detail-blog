@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %} Create a New Blog Post {% endblock title %}
@@ -48,8 +47,12 @@
 	<div class="card mb-3">
 	  <div class="row g-0">
 	    <div class="col-md-3">
-	    	{% if post.author.profile.profile_pic.url %}
-	      		<img src="{{ post.author.profile.profile.url }}" height="200" width="200">
+	    	
+	    	{% if post.author.profile.profile_pic %}
+	      		<img src="{{ post.author.profile.profile_pic.url }}" height="200" width="200">
+
+	    	{% else  %}
+	    		<img src="{% static 'images/default_profile.jpg' %}" height="200" width="200">
 	    	{% endif %}
 	    </div>
 	    <div class="col-md-8">
